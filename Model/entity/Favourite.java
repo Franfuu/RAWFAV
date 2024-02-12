@@ -1,7 +1,5 @@
 package Model.entity;
 
-import java.util.Objects;
-
 public class Favourite {
     protected String id;
     protected String name;
@@ -12,8 +10,9 @@ public class Favourite {
         this.name = name;
         this.duration = duration;
     }
+
     public Favourite() {
-        this("","",0);
+        this("", "", 0);
     }
 
     public String getId() {
@@ -42,7 +41,13 @@ public class Favourite {
 
     @Override
     public String toString() {
-        return "Favourite[id=" + id +"name=" + name + "duration=" + duration + "]";
+        return "Favourite[id=" + id + "name=" + name + "duration=" + duration + "]";
     }
 
+    /*@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Favourite favourite)) return false;
+        return Double.compare(duration, favourite.duration) == 0 && Objects.equals(id, favourite.id) && Objects.equals(name, favourite.name);
+    }*/
 }

@@ -18,7 +18,7 @@ public class Library implements ILibrary {
 
     @Override
     public Favourite[] displayFavs() {
-        // Implement method to display favourites
+
         return new Favourite[0];
     }
 
@@ -30,7 +30,7 @@ public class Library implements ILibrary {
 
     @Override
     public Favourite removeFav(String n) {
-        // Implement method to remove favourite
+
         return null;
     }
 }

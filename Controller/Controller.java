@@ -10,13 +10,13 @@ import Model.entity.Favourite;
 
 public class Controller implements IController {
     IView View = new View();
-    ILibrary Library = (ILibrary) new Library();
+    ILibrary Library = new Library();
 
     public void comeOn() {
         int option;
         do {
             View.seeMenu();
-            option = View.readInteger("Choose an option");
+            option = View.readInteger("Elige una opción");
             controllerMainMenu(option);
         } while (option != 4);
     }
@@ -31,29 +31,30 @@ public class Controller implements IController {
             case 2:
                 Favourite favToAdd = View.displayMenuAddFav();
                 if (Library.addFav(favToAdd)) {
-                    View.displayResult("Favorito Añadido");
+                    View.displayResult("Favorito añadido");
                 } else {
-                    View.displayResult("Error Añadiendo el Favorito");
+                    View.displayResult("Error añadiendo el favorito");
                 }
                 break;
             case 3:
                 Favourite favToRemove = View.displayMenuRemoveFav();
                 Favourite removedFav = Library.removeFav(favToRemove.getName());
                 if (removedFav != null) {
-                    View.displayResult("Favorito Eliminado");
+                    View.displayResult("Favorito eliminado");
                 } else {
-                    View.displayResult("Error Eliminando el Favorito");
+                    View.displayResult("Error eliminando el favorito");
                 }
                 break;
             case 4:
+                end();
                 break;
             default:
-                System.out.println("Invalid option");
+                System.out.println("Opción inválida");
         }
     }
 
-@Override
-    public void ended() {
-        System.out.println("Adios");
+    @Override
+    public void end() {
+        System.out.println("Fin del programa");
     }
 }

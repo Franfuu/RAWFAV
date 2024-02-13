@@ -44,10 +44,4 @@ public class Favourite {
         return "Favourite[id=" + id + "name=" + name + "duration=" + duration + "]";
     }
 
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Favourite favourite)) return false;
-        return Double.compare(duration, favourite.duration) == 0 && Objects.equals(id, favourite.id) && Objects.equals(name, favourite.name);
-    }*/
 }
